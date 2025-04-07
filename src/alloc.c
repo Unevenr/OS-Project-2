@@ -241,6 +241,7 @@ void *turealloc(void *ptr, size_t new_size) {
     if (hdr -> magic != 0x01234567)
     {
         printf("Memory Corruption Error Detected in turealloc\n");
+        abort();
     }
 
     else
@@ -274,6 +275,7 @@ void tufree(void *ptr) {
 
     else
     {
-        return;
+        printf("Memory Corruption Error Detected in tufree\n");
+        abort();
     }
 }
